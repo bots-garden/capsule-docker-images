@@ -1,0 +1,23 @@
+image: k33g/capsule-docker-image:0.0.0
+# Source code of the Dockerfile:
+# See the docker directory of this project
+
+tasks:
+  - name: initialize
+    before: |
+      echo "💊 Before..."
+      
+    init: |
+      echo "💊 Init..."
+
+ports:
+  - port: 3000-25000
+    visibility: public
+    onOpen: ignore
+
+vscode:
+  extensions:
+    - pkief.material-icon-theme
+    - aaron-bond.better-comments
+    - golang.go
+    - PKief.material-icon-theme
