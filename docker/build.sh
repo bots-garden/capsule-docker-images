@@ -3,6 +3,11 @@
 set -o allexport; source .env; set +o allexport
 echo "🐋 ${IMAGE_NAME}:${IMAGE_TAG}"
 
+if [ -d "tmp" ] 
+then
+    rm -rf tmp
+fi
+
 # build capsule
 mkdir tmp
 cd tmp
