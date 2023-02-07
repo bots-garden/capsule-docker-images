@@ -6,7 +6,7 @@ COPY hello.go .
 RUN go mod tidy && \
     tinygo build -o hello.wasm -scheduler=none -target wasi ./hello.go
 
-FROM k33g/capsule-launcher:0.3.0
+FROM k33g/capsule-launcher:0.3.1
 #WORKDIR /root/
 COPY --from=builder /home .
 EXPOSE 8080
